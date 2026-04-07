@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شاي مخدر تبوك | أفضل مقهى شاي في تبوك</title>
+    <meta name="description" content="استمتع بأفضل شاي مخدر وجلسات راقية في تبوك، منيو متنوع، أسعار مناسبة.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1A0A00;
+            --secondary: #C8860A;
+            --bg-color: #F5EDD7;
+            --white: #ffffff;
+            --gray: #f9f6f0;
+            --text-light: rgba(255, 255, 255, 0.8);
+            --transition: all 0.3s ease;
+            --font-ar: 'Cairo', sans-serif;
+            --font-en: 'Playfair Display', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-ar);
+            background-color: var(--bg-color);
+            color: var(--primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+        }
+
+        .en-font {
+            font-family: var(--font-en);
+        }
+
+        .text-gold {
+            color: var(--secondary);
+        }
+
+        /* Loader */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s;
+        }
+
+        .loader-logo {
+            color: var(--secondary);
+            font-size: 3rem;
+            font-family: var(--font-en);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 10, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            z-index: 2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            position: relative;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            padding-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--secondary);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+            right: auto;
+            left: 0;
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #home {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 10, 0, 0.7), rgba(26, 10, 0, 0.8)), url('https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-inline: auto;
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+            cursor: pointer;
+            outline: none;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        /* Stats & Why Us */
+        .stats-section {
+            padding: 4rem 5%;
+            background: var(--white);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-family: var(--font-en);
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Menu Section */
+        #menu {
+            padding: 5rem 5%;
+            background: var(--gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .menu-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-family: var(--font-ar);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.03);
+            border: 1px solid rgba(200, 134, 10, 0.2);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 1.5rem;
+        }
+
+        .menu-info h4 {
+            font-size: 1.1rem;
+            flex: 1;
+        }
+
+        .menu-price {
+            color: var(--secondary);
+            font-weight: 800;
+            font-family: var(--font-en);
+            font-size: 0.9rem;
+            margin: 0 10px;
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .btn-add-cart {
+            background: transparent;
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: var(--font-ar);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        /* Seating Section */
+        #seating {
+            padding: 5rem 5%;
+            background: var(--bg-color);
+        }
+
+        .seating-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .seating-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 350px;
+            cursor: pointer;
+        }
+
+        .seating-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .seating-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(26, 10, 0, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .seating-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .seating-card h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .seating-features {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .seating-card:hover .seating-features {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Booking Section */
+        #booking {
+            padding: 5rem 5%;
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 134, 10, 0.2);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .form-control {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        select option {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .booking-btn {
+            width: 100%;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Cart Summary */
+        .cart-summary {
+            display: none;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-remove {
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .btn-remove:hover {
+            color: #ff1a1a;
+            transform: scale(1.1);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            color: var(--primary);
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* Loading Animation */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--secondary);
+            animation: spin 1s ease-in-out infinite;
+            margin: 0 auto 20px auto;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* About Section */
+        #about {
+            padding: 5rem 5%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 20px 20px 0 var(--secondary);
+        }
+
+        /* Gallery */
+        #gallery {
+            padding: 5rem 5%;
+            background: var(--gray);
+        }
+
+        .gallery-grid {
+            columns: 3 250px;
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(200, 134, 10, 0.4);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 5px;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Contact & Footer */
+        #contact {
+            padding: 5rem 5%;
+            background: var(--bg-color);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .status-open {
+            background: rgba(37, 211, 102, 0.1);
+            color: #1bae50;
+        }
+
+        .status-closed {
+            background: rgba(211, 37, 37, 0.1);
+            color: #d32525;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .status-open .dot {
+            background: #1bae50;
+            box-shadow: 0 0 10px #1bae50;
+            animation: blink 1.5s infinite;
+        }
+
+        .status-closed .dot {
+            background: #d32525;
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+            transform: translateY(-3px);
+            display: inline-block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: 0.4s ease-in-out;
+                transform: none;
+            }
+
+            .nav-links.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img img {
+                box-shadow: 10px 10px 0 var(--secondary);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-logo">شاي مخدر</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="#home" class="logo">شاي مخدر</a>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#menu">المنيو التجريبي</a></li>
+            <li><a href="#seating">الطاولات</a></li>
+            <li><a href="#about">قصتنا</a></li>
+            <li><a href="#booking" class="text-gold">احجز الان</a></li>
+        </ul>
+        <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>شاي مخدر</h1>
+            <p>أفضل جلسة شاي رايقة في تبوك. عِش تجربة الضيافة العربية الأصيلة.</p>
+            <a href="#booking" class="btn">احجز جلستك الآن</a>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+            <h3 class="counter" data-target="5000">0</h3>
+            <p>عميل سعيد</p>
+        </div>
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3 class="counter" data-target="3">0</h3>
+            <p>سنوات خبرة</p>
+        </div>
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3>30+</h3>
+            <p>صنف في المنيو</p>
+        </div>
+        <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3>4.3</h3>
+            <p>تقييم العملاء</p>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu">
+        <h2 class="section-title" data-aos="fade-up">المنيو التجريبي (MVP)</h2>
+        <div class="menu-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="tea">الشاي</button>
+            <button class="filter-btn" data-filter="snacks">المخبوزات والحلويات</button>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+            <!-- Populated via JS -->
+        </div>
+    </section>
+
+    <!-- Seating -->
+    <section id="seating">
+        <h2 class="section-title" data-aos="fade-up">حجز الطاولات</h2>
+        <div class="seating-grid">
+            <!-- Generated via JS -->
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking">
+        <h2 class="section-title" style="color:var(--white)" data-aos="fade-up">احجز جلستك وتوصيل الدفع</h2>
+        <div class="booking-container" data-aos="fade-up">
+            <form id="bookingForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>الاسم الكامل</label>
+                        <input type="text" id="b-name" class="form-control" required placeholder="محمد أحمد">
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الجوال (سعودي)</label>
+                        <input type="tel" id="b-phone" class="form-control" required
+                            pattern="^(05)(5|0|3|6|4|9|1|8|7)([0-9]{7})$" placeholder="05XXXXXXXX"
+                            title="يجب أن يبدأ بـ 05 ويتكون من 10 أرقام">
+                    </div>
+                    <div class="form-group">
+                        <label>نوع الطاولة</label>
+                        <select id="b-type" class="form-control" required>
+                            <option value="">اختر الطاولة</option>
+                            <option value="طاولات داخلية">طاولات داخلية</option>
+                            <option value="طاولات خارجية">طاولات خارجية</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>عدد الأشخاص</label>
+                        <select id="b-guests" class="form-control" required>
+                            <option value="">اختار الرقم</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>التاريخ المتاح للحجز</label>
+                        <select id="b-date" class="form-control" required>
+                            <option value="">اختار اليوم</option>
+                            <!-- Generated by JS -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>وقت الحجز</label>
+                        <input type="time" id="b-time" class="form-control" required>
+                    </div>
+
+                    <!-- Cart Summary in Booking -->
+                    <div class="form-group full-width">
+                        <div id="cart-summary" class="cart-summary">
+                            <h4 style="color:var(--secondary); margin-bottom:10px;">الطلبات المختارة من المنيو</h4>
+                            <ul id="cart-items-list" style="list-style:none; padding:0; margin-bottom:10px;"></ul>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>ملاحظات إضافية (اختياري)</label>
+                        <textarea id="b-notes" class="form-control" rows="2" placeholder="أي طلبات خاصة..."></textarea>
+                    </div>
+
+                    <!-- Payment MVP Demo -->
+                    <div class="form-group full-width" style="margin-top: 10px;">
+                        <label
+                            style="color:var(--secondary); font-size:1.1rem; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:5px; margin-bottom:10px;">طريقة
+                            الدفع (وهمية للتجربة)</label>
+                        <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                            <label style="cursor:pointer; display:flex; align-items:center; gap:8px;"><input
+                                    type="radio" name="payment" value="Apple Pay" checked> Apple Pay <i
+                                    class="fab fa-apple" style="font-size:1.3rem;"></i></label>
+                            <label style="cursor:pointer; display:flex; align-items:center; gap:8px;"><input
+                                    type="radio" name="payment" value="بطاقة ائتمانية / مدى"> بطاقة بنكية / مدى <i
+                                    class="fas fa-credit-card"></i></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn booking-btn"><i class="fas fa-lock"></i> تأكيد الطلب
+                            والدفع</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Processing Modal -->
+    <div id="processingModal" class="modal">
+        <div class="modal-content" style="background:transparent; box-shadow:none; border:none; text-align:center;">
+            <div class="spinner"></div>
+            <h3 style="color:var(--white); font-family:var(--font-ar);">جاري معالجة الدفع...</h3>
+        </div>
+    </div>
+
+    <!-- Invoice Modal -->
+    <div id="invoiceModal" class="modal">
+        <div class="modal-content"
+            style="max-width: 500px; text-align: right; background: #fff; border-radius: 10px; padding: 2rem;">
+            <div style="text-align: center; border-bottom: 2px dashed #ddd; padding-bottom: 15px; margin-bottom: 15px;">
+                <i class="fas fa-check-circle" style="font-size: 3rem; color: #25D366; margin-bottom: 10px;"></i>
+                <h3 style="color:#1A0A00; margin-bottom:5px;">بنجاح! الفاتورة الإلكترونية</h3>
+                <p style="color:#666; font-size:0.9rem;">شاي مخدر - تبوك</p>
+            </div>
+
+            <div id="invoice-details" style="color: #333; font-size: 0.95rem; line-height: 1.8;">
+                <!-- Populated via JS -->
+            </div>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <button class="btn" style="width:100%; border-radius: 8px;" onclick="window.location.reload()">إغلاق
+                    ومسح الفاتورة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+        <div class="about-text" data-aos="fade-left">
+            <h2>قصتنا وقيمنا</h2>
+            <p>بدأت قصة "شاي مخدر" من شغفنا بتقديم كوب الشاي المثالي. نحن لا نقدم مشروباً فحسب، بل نقدم تجربة
+                ضيافة عربية أصيلة بنكهة مميزة تناسب ذائقتكم.</p>
+            <p>نتميز في تبوك بتصميم يجمع بين الأصالة الشرقية والحداثة، لنمنحكم جلسة هادئة وراقية تليق بكم.</p>
+            <p><strong>الموقع:</strong> طريق الملك عبدالله، تبوك</p>
+        </div>
+        <div class="about-img" data-aos="fade-right">
+            <!-- Universal Tea Cup Image -->
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80" alt="مقهى شاي مخدر">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title" data-aos="fade-up">تواصل معنا</h2>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-left">
+                <h3>معلومات التواصل</h3>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>العنوان:</strong><br>
+                        طريق الملك عبدالله، حي المروج، تبوك
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>ساعات العمل:</strong><br>
+                        يومياً من 4:00 مساءً حتى 2:00 صباحاً
+                        <br>
+                        <div id="store-status" class="status-indicator">
+                            <span class="dot"></span>
+                            <span class="text">جاري التحقق...</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>رقم التواصل / واتساب:</strong><br>
+                        <a href="https://wa.me/966530808866"
+                            style="color:var(--primary); text-decoration:none; font-family:var(--font-en); font-weight:bold; font-size:1.2rem;"
+                            target="_blank">+966 53 080 8866</a>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container" data-aos="fade-right">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110196.40263629471!2d36.56156715!3d28.398939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15a9b3433eeccbb1%3A0x6bbaeeeae7a4d5e9!2sAl%20Muruj%2C%20Tabuk%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1715000000000!5m2!1sen!2s"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 شاي مخدر. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">
+            تم التطوير بواسطة <a href="https://wa.me/966558187430" target="_blank" style="color: var(--secondary); text-decoration: none; font-weight: bold;">0558187430 <i class="fab fa-whatsapp"></i></a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS
+        AOS.init({ duration: 800, once: true, offset: 100 });
+
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 500);
+        });
+
+        // Sticky Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(26, 10, 0, 0.98)';
+                nav.style.padding = '0.8rem 5%';
+            } else {
+                nav.style.background = 'rgba(26, 10, 0, 0.95)';
+                nav.style.padding = '1rem 5%';
+            }
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const startCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + target / 100);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target + (target > 10 ? '+' : '');
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        };
+        const counterObserver = new IntersectionObserver(startCounters, { threshold: 1 });
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // UNIVERSAL TEA CUP IMAGE 
+        const CUP_IMG = "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&q=80";
+
+        // MVP 10 Items Menu 
+        const menuData = [
+            { id: 1, name: "شاي مخدر كلاسيك", price: "0 SAR", category: "tea", img: CUP_IMG, desc: "شاي أحمر بخديرة مميزة" },
+            { id: 2, name: "شاي ونعناع", price: "0 SAR", category: "tea", img: CUP_IMG, desc: "شاي مخدر مع أوراق النعناع" },
+            { id: 3, name: "شاي حبق", price: "0 SAR", category: "tea", img: CUP_IMG, desc: "شاي مخدر مع أوراق الحبق العطرية" },
+            { id: 4, name: "شاي كرك", price: "0 SAR", category: "tea", img: CUP_IMG, desc: "شاي غني بنكهة الهيل والزعفران والحليب المبخر" },
+            { id: 5, name: "شاي حليب", price: "0 SAR", category: "tea", img: CUP_IMG, desc: "مزيج الشاي الأسود مع الحليب المعزز بالنكهة" },
+
+            { id: 6, name: "خلية عسل", price: "0 SAR", category: "snacks", img: CUP_IMG, desc: "عجينة قطنية هشة محشوة بالجبن ومسقاة بالعسل" },
+            { id: 7, name: "فطيرة بالجبن", price: "0 SAR", category: "snacks", img: CUP_IMG, desc: "فطيرة طازجة محشوة بالجبن الأبيض الفاخر" },
+            { id: 8, name: "فطيرة بالزعتر", price: "0 SAR", category: "snacks", img: CUP_IMG, desc: "فطيرة مقرمشة بالزعتر وزيت الزيتون البكر" },
+            { id: 9, name: "فطيرة باللبنة", price: "0 SAR", category: "snacks", img: CUP_IMG, desc: "فطيرة طرية ومميزة بطعم اللبنة الطازجة" }
+        ];
+
+        // Cart Logic
+        let cart = {};
+
+        function addToCart(itemId) {
+            if (!cart[itemId]) cart[itemId] = 0;
+            cart[itemId]++;
+            updateCartUI();
+
+            // Show toast feedback
+            const btn = event.target;
+            const ogText = btn.innerHTML;
+            btn.innerHTML = "<i class='fas fa-check'></i> مضاف!";
+            btn.style.background = "var(--secondary)";
+            btn.style.color = "var(--white)";
+            setTimeout(() => {
+                btn.innerHTML = ogText;
+                btn.style.background = "transparent";
+                btn.style.color = "var(--secondary)";
+            }, 1000);
+        }
+
+        function removeFromCart(itemId) {
+            if (cart[itemId]) {
+                cart[itemId]--;
+                if (cart[itemId] <= 0) delete cart[itemId];
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            const summary = document.getElementById('cart-summary');
+            const list = document.getElementById('cart-items-list');
+            list.innerHTML = '';
+
+            let hasItems = false;
+            for (let id in cart) {
+                hasItems = true;
+                const item = menuData.find(m => m.id == id);
+                list.innerHTML += `
+                    <li class="cart-item-row">
+                        <span><strong style="color:var(--secondary)">${cart[id]}x</strong> ${item.name}</span>
+                        <button class="btn-remove" onclick="removeFromCart(${id})" title="إزالة"><i class="fas fa-trash"></i></button>
+                    </li>`;
+            }
+            summary.style.display = hasItems ? 'block' : 'none';
+        }
+
+        const menuGrid = document.getElementById('menu-grid');
+        function renderMenu(category = 'all') {
+            menuGrid.innerHTML = '';
+            const filtered = category === 'all' ? menuData : menuData.filter(item => item.category === category);
+
+            filtered.forEach((item, index) => {
+                const delay = (index % 4) * 100;
+                menuGrid.innerHTML += `
+                    <div class="menu-item" data-aos="fade-up" data-aos-delay="${delay}">
+                        <img src="${item.img}" alt="${item.name}" class="menu-img" loading="lazy">
+                        <div class="menu-info">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+                                <h4>${item.name}</h4>
+                                <span class="menu-price">${item.price}</span>
+                                <button class="btn-add-cart" onclick="addToCart(${item.id})">إضافة</button>
+                            </div>
+                            <p class="menu-desc">${item.desc}</p>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+        renderMenu();
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                renderMenu(e.target.getAttribute('data-filter'));
+            });
+        });
+
+        // Seating Data Contextual Images
+        const seatingData = [
+            { name: "طاولات داخلية", capacity: "طاولات داخلية مكيفة", features: "تكييف • هدوء", img: "pag/طاولات داخليه.jpeg" },
+            { name: "طاولات خارجية", capacity: "طاولات خارجية", features: "هواء طلق", img: "pag/طاولات خارجيه.jpeg" }
+        ];
+
+        const seatingGrid = document.querySelector('.seating-grid');
+        seatingData.forEach((seat, i) => {
+            seatingGrid.innerHTML += `
+                <div class="seating-card" data-aos="zoom-in" data-aos-delay="${i * 100}" onclick="document.getElementById('b-type').value='${seat.name}'; document.getElementById('booking').scrollIntoView({behavior:'smooth'});">
+                    <img src="${seat.img}" alt="${seat.name}" loading="lazy">
+                    <div class="seating-overlay">
+                        <h3>${seat.name}</h3>
+                        <div class="seating-features">
+                            <p><i class="fas fa-building text-gold"></i> ${seat.capacity}</p>
+                            <p><i class="fas fa-star text-gold"></i> ${seat.features}</p>
+                            <br>
+                            <span class="btn" style="padding: 5px 15px; font-size:0.9rem;">احجز هذه الجلسة</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Setup Custom Date 30-Day Dropdown
+        const dateSelect = document.getElementById('b-date');
+        const daysAr = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+        let currentDate = new Date();
+
+        for (let i = 0; i < 30; i++) {
+            let dayName = daysAr[currentDate.getDay()];
+            let dayNum = currentDate.getDate();
+            let monthNum = currentDate.getMonth() + 1;
+            let displayString = `${dayName} - ${dayNum}/${monthNum}`;
+            dateSelect.innerHTML += `<option value="${displayString}">${displayString}</option>`;
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        // Custom time logic removed. Time input handles its own picker.
+
+        // Booking MVP Demo Logic
+        const bookingForm = document.getElementById('bookingForm');
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            document.getElementById('processingModal').style.display = 'flex';
+
+            setTimeout(() => {
+                document.getElementById('processingModal').style.display = 'none';
+
+                const name = document.getElementById('b-name').value;
+                const phone = document.getElementById('b-phone').value;
+                const type = document.getElementById('b-type').value;
+                const guests = document.getElementById('b-guests').value;
+                const date = document.getElementById('b-date').value;
+                const timeVal = document.getElementById('b-time').value;
+                const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+                const invoiceId = Math.floor(10000 + Math.random() * 90000);
+
+                let depositText = Object.keys(cart).length === 0 ? "10 ريال (عربون تأكيد حجز بدون طلبات)" : "0 ريال (لا يوجد عربون دُفع كامل الطلب)";
+
+                let cartHtml = "";
+                if (Object.keys(cart).length > 0) {
+                    cartHtml = `<div style="margin-top:15px; padding-top:15px; border-top:1px solid #ddd;">
+                                <strong>الطلبات المختارة:</strong>
+                                <ul style="list-style:none; padding-right:15px; margin-top:5px;">`;
+                    for (let id in cart) {
+                        const item = menuData.find(m => m.id == id);
+                        cartHtml += `<li style="font-size:0.9rem; margin-bottom:3px;"><span style="color:var(--secondary); font-weight:bold;">${cart[id]}x</span> ${item.name}</li>`;
+                    }
+                    cartHtml += `</ul></div>`;
+                } else {
+                    cartHtml = `<div style="margin-top:15px; padding-top:15px; border-top:1px solid #ddd; color:#888; font-size:0.9rem;">
+                                لا يوجد طلبات مسبقة - الحجز لطاولة فقط
+                                </div>`;
+                }
+
+                document.getElementById('invoice-details').innerHTML = `
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; text-align:right;">
+                        <div><strong>رقم المرجع:</strong> #${invoiceId}</div>
+                        <div><strong>الدفع بواسطة:</strong> ${paymentMethod}</div>
+                        
+                        <div style="grid-column:1/-1;"><strong>الاسم:</strong> ${name} | ${phone}</div>
+                        
+                        <div><strong>الطاولة:</strong> ${type} (${guests} أفراد)</div>
+                        <div><strong>بتاريخ:</strong><br>${date} | ${timeVal}</div>
+                    </div>
+                    ${cartHtml}
+                    <div style="margin-top:20px; padding:15px; background:#f9f9f9; border-radius:8px; text-align:center;">
+                        <span style="color:#25D366; font-size:1.1rem; font-weight:bold;">المبلغ المدفوع (تجريبي): ${depositText}</span>
+                    </div>
+                `;
+
+                document.getElementById('invoiceModal').style.display = 'flex';
+
+            }, 1800); // Process for 1.8 seconds to look real
+        });
+
+        // Removed Gallery and Lightbox logices
+
+        // Store Status
+        function checkStoreStatus() {
+            const d = new Date();
+            const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+            const ksaDate = new Date(utc + (3600000 * 3));
+            const hours = ksaDate.getHours();
+
+            const isOpen = (hours >= 16 || hours < 2);
+            const statusDiv = document.getElementById('store-status');
+            const textSpan = statusDiv.querySelector('.text');
+
+            if (isOpen) {
+                statusDiv.className = 'status-indicator status-open';
+                textSpan.innerText = 'مفتوح الآن';
+            } else {
+                statusDiv.className = 'status-indicator status-closed';
+                textSpan.innerText = 'مغلق الآن';
+            }
+        }
+        checkStoreStatus();
+        setInterval(checkStoreStatus, 60000);
+    </script>
+</body>
+
+</html>
